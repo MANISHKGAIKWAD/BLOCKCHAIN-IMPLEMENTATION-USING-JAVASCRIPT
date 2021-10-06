@@ -15,7 +15,7 @@ class Block{
 
 class Blockchain{
     constructor(){
-        this.chain = [];
+        this.chain = [this.createGenesisBlock()];
     }
 
     createGenesisBlock(){
@@ -23,7 +23,7 @@ class Blockchain{
     }
 
     getLatestBlock(){
-        return this.chain(this.chain.length-1);
+        return this.chain[this.chain.length-1];
     }
 
     addBlock(newBlock){
