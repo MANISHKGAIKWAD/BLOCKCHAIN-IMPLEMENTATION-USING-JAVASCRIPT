@@ -21,4 +21,20 @@ class Blockchain{
     createGenesisBlock(){
         return new Block(0, "06/10/2021", "Genesis block", "0");
     }
+
+    getLatestBlock(){
+        return this.chain(this.chain.length-1);
+    }
+
+    addBlock(newBlock){
+        newBlock.previousHash = this.getLatestBlock().hash;
+        newBlock.hash = newBlock.calculateHash();
+        this.chain.push(newBlock);
+    }
 }
+
+let BCT = new Blockchain();
+BCT.addBlock(new Block(1, 07/10/2021, {amount: 7}));
+BCT.addBlock(new Block(1, 09/10/2021, {amount: 9}));
+
+console.log.apply(JSON.stringify(BCT, null, 4));
