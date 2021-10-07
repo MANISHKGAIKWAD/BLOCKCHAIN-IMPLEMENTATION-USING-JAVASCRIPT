@@ -37,4 +37,4 @@ let BCT = new Blockchain();
 BCT.addBlock(new Block(1, 07/10/2021, {amount: 7}));
 BCT.addBlock(new Block(1, 09/10/2021, {amount: 9}));
 
-console.log.apply(JSON.stringify(BCT, null, 4));
+console.log(JSON.stringify(BCT, null, 4));
